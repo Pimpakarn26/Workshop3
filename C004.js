@@ -1,6 +1,6 @@
 class Shape {
     color = "";
-    filled = false;
+    filled = true;
     constructor(color, filled) {
         this.color = color;
         this.filled = filled;
@@ -24,9 +24,10 @@ class Shape {
       }
 }
 
+//*----วงกลม----*//
 class Circle extends Shape {
     radius = 1.0;
-    constructor(radius = 1.0, color, filled) {
+    constructor(radius = 1.0, color = "Yellow", filled = true) {
       super(color, filled);
       this.radius = radius;
     }
@@ -52,6 +53,7 @@ class Circle extends Shape {
     }
   }
   
+  //*----สี่เหลี่ยมผืนผ้า----*//
   class Rectangle extends Shape {
     width = 1.0;
     length = 1.0;
@@ -92,6 +94,7 @@ class Circle extends Shape {
     }
   }
   
+  //*----สี่เหลี่ยม----*//
   class Square extends Rectangle {
     side = 1.0;
     constructor(side = 1.0, width, length, color, filled) {
@@ -104,15 +107,16 @@ class Circle extends Shape {
     }
   
     setSide(side) {
-      this.side = side;
+      this.width = side;
+      this.length = side;
     }
   
-    setWidth() {
-      this.width = this.side;
+    setWidth(side) {
+      this.setSide(side);
     }
   
-    setLength() {
-      this.length = this.side;
+    setLength(side) {
+      this.setSide(side);
     }
   
     toString() {
